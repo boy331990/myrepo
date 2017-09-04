@@ -17,4 +17,17 @@ public class SampleDAO extends AbstractDAO {
 		// "sample.selectBoardList"의 sample이라는 부분이 바로 xml에서 설정한 namespace의 이름이다.
 		
 	}
+
+	public void insertBoard(Map<String, Object> map) throws Exception {
+		insert("sample.insertBoard", map);
+	}
+
+	public void updateHitCnt(Map<String, Object> map) throws Exception {
+		update("sample.updateHitCnt", map);
+	}
+
+	@SuppressWarnings("unchecked")
+	public Map<String, Object> selectBoardDetail(Map<String, Object> map) throws Exception {
+		return (Map<String, Object>) selectOne("sample.selectBoardDetail", map);
+	}
 }
